@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="IA9sUshNwWkXDAq16xZBQv4-64T4E4EsbUlsUakA3U8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edit images for free, remove backgrounds, and use photo editing tools.">
+  <meta name="keywords" content="free image editor, background removal, online photo editing, Background remover">
+  <meta name="author" content="Bgcut">
+    <title>Free Image Editor - Background Removal & Photo Editing Tools</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="bgcut.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "BGCut",
+  "url": "https://bgcut.netlify.app/",
+  "description": "BGCut - AI Powered Background Remover | Remove Background in One Click | Background remover",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://bgcut.netlify.app/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "BGCut",
+    "logo": "https://bgcut.netlify.app/bgcut.png"
+  }
+}
+</script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Bgcut</h1>
+      <p>Background Removal, Editing, and Templates</p>
+    </div>
+
+    <div class="editor-panel">
+      <div class="upload-section">
+        <input type="file" id="fileInput" accept="image/*">
+        <label for="fileInput" class="upload-label">Upload Image</label>
+      </div>
+
+   
+         <div style="display: flex; justify-content: center; text-align: center;">  
+            <div class="preview-container" style="text-align: center;">
+                <canvas id="previewCanvas" width="200" height="350"></canvas>
+            </div>
+         </div>
+
+      <div class="controls">
+        <div class="control-group">
+          <h3>Background</h3>
+          <button class="btn" onclick="removeBackground()">Remove BG</button>
+          <button class="btn" onclick="changeBgColor('#ffffff')">White BG</button>
+          <button class="btn" onclick="changeBgColor('#000000')">Black BG</button>
+        </div>
+
+        <div class="control-group">
+          <h3>Custom Background</h3>
+          <input type="file" id="bgFileInput" accept="image/*" style="display: none;">
+          <label for="bgFileInput" class="btn">Upload Background</label>
+        </div>
+
+        <div class="control-group">
+          <h3>Edit</h3>
+          <button class="btn" onclick="rotateImage()">Rotate</button>
+          <button class="btn" onclick="enableCrop()">Crop</button>
+          <button class="btn" onclick="applyCrop()">Apply Crop</button>
+        </div>
+
+        <div class="control-group">
+          <h3>Filters</h3>
+          <button class="btn" onclick="applyFilter('grayscale')">B&W</button>
+          <button class="btn" onclick="applyFilter('sepia')">Vintage</button>
+          <button class="btn" onclick="applyFilter('blur(5px)')">Blur</button>
+        </div>
+
+        <div class="control-group text-tool">
+          <h3>Text</h3>
+          <input type="text" id="textInput" placeholder="Enter text">
+          <button class="btn" onclick="addText()">Add</button>
+        </div>
+
+        <div class="control-group">
+          <h3>Stickers</h3>
+          <button class="btn" onclick="addSticker('😊')">😊</button>
+          <button class="btn" onclick="addSticker('❤️')">❤️</button>
+          <button class="btn" onclick="addSticker('🌟')">🌟</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="download-section" style="text-align: center; margin-top: 15px;">
+      <button class="btn" style="padding: 10px 20px;" onclick="downloadImage()">Download</button>
+    </div>
+  </div>
+
+  <!-- Fabric.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+  <script src="script.js">
+  </script>
+</body>
+</html>
